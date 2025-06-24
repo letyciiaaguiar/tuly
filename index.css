@@ -1,0 +1,90 @@
+/* index.css */
+
+/* Importar fonte Poppins (já usada no login.css) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* Variáveis de cores (consistentes com os outros arquivos) */
+:root {
+    --bg-dark: #1A1A1A; /* Fundo escuro principal */
+    --text-light: #E0E0E0; /* Cor do texto principal claro */
+    --primary-purple-start: #6C00FF; /* Roxo mais escuro para gradiente */
+    --primary-purple-end: #D37DFF; /* Roxo mais claro para gradiente */
+    --button-hover-start: #b84fff; /* Roxo mais claro para hover do botão */
+    --button-hover-end: #f79bff; /* Roxo mais claro para hover do botão */
+}
+
+/* Estilos gerais para o corpo da página */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark); /* Fundo escuro */
+    color: var(--text-light); /* Cor do texto claro */
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    min-height: 100vh; /* Ocupa a altura total da viewport */
+    margin: 0;
+    padding: 20px;
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilo para o título */
+h1 {
+    font-size: 2.5em; /* Tamanho da fonte maior */
+    color: var(--primary-purple-end); /* Cor roxa clara para o título */
+    margin-bottom: 40px; /* Espaço abaixo do título */
+    font-weight: 700; /* Negrito */
+    text-shadow: 0 0 10px rgba(211, 125, 255, 0.3); /* Sombra suave para destaque */
+}
+
+/* Estilos para os botões */
+.button-container {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os botões */
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 25px; /* Preenchimento interno */
+    background: linear-gradient(to right, var(--primary-purple-start), var(--primary-purple-end)); /* Gradiente roxo */
+    color: white;
+    font-size: 1.1em; /* Tamanho da fonte do botão */
+    font-weight: 500; /* Peso da fonte */
+    border: none;
+    border-radius: 8px; /* Cantos arredondados */
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease; /* Transição suave no hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+}
+
+button:hover {
+    background: linear-gradient(to right, var(--button-hover-start), var(--button-hover-end)); /* Gradiente mais claro no hover */
+    transform: translateY(-2px); /* Efeito de "levantar" */
+}
+
+button:active {
+    transform: translateY(0); /* Volta ao normal ao clicar */
+}
+
+/* Estilos para o link dos botões (importante para que o botão seja clicável corretamente) */
+a {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: inherit; /* Herda a cor do texto do botão */
+}
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em; /* Reduz o tamanho do título em telas menores */
+    }
+
+    .button-container {
+        flex-direction: column; /* Empilha os botões em telas menores */
+        gap: 15px; /* Ajusta o espaçamento */
+    }
+
+    button {
+        width: 100%; /* Botões ocupam toda a largura disponível */
+        padding: 10px 20px;
+    }
+}
